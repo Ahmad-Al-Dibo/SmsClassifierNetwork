@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Training Metrics</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f9f9f9;
+            padding: 30px;
+            text-align: center;
+        }
+        canvas {
+            max-width: 800px;
+            margin: 40px auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 8px rgba(0,0,0,0.1);
+        }
+        a {
+            text-decoration: none;
+            background: #007BFF;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 5px;
+        }
+        h2 {
+            margin-bottom: 10px;
+        }
+        h3 {
+            color: #333;
+        }
+        p {
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <h2>Training & Validation Accuracy</h2>
+    <canvas id="accChart"></canvas>
+
+    <h2>Training & Validation Loss</h2>
+    <canvas id="lossChart"></canvas>
+
+    <a href="/">⬅️ Terug naar hoofdscherm</a>
+    <p>This Model is developed by Ahmad Mahmoud Al Dibo.</p>
+
+    {% if history is defined and history.accuracy is defined %}
+    <script>
+        const history = {{ history | tojson | safe }};
+        const epochs = [...Array(history.accuracy.length).keys()].map(i => i + 1);
+
+        new Chart(document.getElementById('accChart').getContext('2d'), {
+            type: 'line',
+            data: {
+                labels: epochs,
+                datasets: [
+                    {
+                        label: 'Training Accuracy',
+                        data: history.accuracy,
+                        borderColor: 'red',
+                        fill: false
+                    },
+                    {
+                        label: 'Validation Accuracy',
+                        data: history.val_accuracy,
+                        borderColor: 'blue',
+                        fill: false
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    x: { title: { display: true, text: 'Epochs' } },
+                    y: { title: { display: true, text: 'Accuracy' }, min: 0.8, max: 1 }
+                }
+            }
+        });
+
+        new Chart(document.getElementById('lossChart').getContext('2d'), {
+            type: 'line',
+            data: {
+                labels: epochs,
+                datasets: [
+                    {
+                        label: 'Training Loss',
+                        data: history.loss,
+                        borderColor: 'red',
+                        fill: false
+                    },
+                    {
+                        label: 'Validation Loss',
+                        data: history.val_loss,
+                        borderColor: 'blue',
+                        fill: false
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    x: { title: { display: true, text: 'Epochs' } },
+                    y: { title: { display: true, text: 'Loss' } }
+                }
+            }
+        });
+    </script>
+    {% else %}
+        <p style="color: red;">⚠️ Geen geldige history-data gevonden.</p>
+    {% endif %}
+</body>
+</html>

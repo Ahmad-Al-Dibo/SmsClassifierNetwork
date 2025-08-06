@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Homepagina</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f0f2f5;
+            padding: 40px;
+            text-align: center;
+        }
+        a {
+            display: inline-block;
+            background: #007BFF;
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+        a:hover {
+            background: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h2>Voorspel SMS-categorie</h2>
+<form method="post">
+    <textarea name="message" rows="4" cols="50" placeholder="Voer SMS in..." required></textarea><br><br>
+    <input type="submit" value="Voorspel">
+</form>
+
+{% if result %}
+    <h3>Voorspelling: <span style="color:green">{{ result }}</span></h3>
+    <h3>Predictie resultaat: <span style="color:green">{{ predict_result }}</span></h3>
+{% endif %}
+    <h1>Welkom bij je ML-app</h1>
+    <p>Klik hieronder om de traininggrafieken te bekijken.</p>
+    <p>Dit Model is ontwikkeld door Ahmad Mahmoud Al Dibo.</p>
+    <a href="/metrics">📊 Bekijk training metrics</a>
+</body>
+</html>
