@@ -30,5 +30,14 @@ Dit LSTM-netwerk is ontworpen voor de classificatie van sms-berichten in twee ca
 
 Het model leert kenmerken van spamberichten herkennen op basis van de tekstinhoud van sms’jes. Dankzij de LSTM-architectuur kan het niet alleen woorden herkennen, maar ook patronen in de volgorde waarin ze verschijnen — wat essentieel is bij natuurlijke taalverwerking.
 
+<img width="576" height="455" alt="output2" src="https://github.com/user-attachments/assets/65b9fb59-f282-445c-8f1d-96a646c813ea" />
+
+
+<img width="576" height="455" alt="output" src="https://github.com/user-attachments/assets/8199994b-a697-47f0-a9a2-167504395c38" />
+
+
+<img width="710" height="460" alt="image" src="https://github.com/user-attachments/assets/2c830b1a-0f5d-4853-8aa5-d96b94e71ce2" />
+
 
 # Auther: @Ahmad Mahmoud Al-Dibo
+# Date: August 7 - 2025
