@@ -1,5 +1,10 @@
 # 📱 LSTM-netwerk voor SMS-classificatie (Ham vs. Spam)
 
+## Om het een model te trainen heb data nodig die kun je van onderstaande linken downloaden:
+1. [Google Drive bestand](https://www.youtube.com/redirect?event=video_description&redir_token=QUFFLUhqbGxNTjE4SjdxQVQzQy1RcjFSbVRiSkg0TGU0UXxBQ3Jtc0ttRWJjUUc4RUVSSE5CYnpPWXl4NFAzd1NPUnJfQnRpOGhtUDR5WFRWeXVzTXhRMWdmOXRGeklyZWwzMk50aEZkbm11eGVuWEpOOGQyQi1jUE9LOEFTQmdTS2RuSTY2YS1JaVNnSkdQM2huY2RpU2tSUQ&q=https%3A%2F%2Fdrive.google.com%2Ffile%2Fd%2F10CvW_MY2gyU0Q5Tct10aFXjMJOSOV2xA%2Fview%3Fusp%3Dsharing&v=HKcvvooqYpM)
+2. [GloVe embeddings - Stanford NLP](https://www.youtube.com/redirect?event=video_description&redir_token=QUFFLUhqbXo0Z2RibXgyZm1oWG1YV25DZE9xWEc0R3lZZ3xBQ3Jtc0tuVkVvZENLUUQyd0xsWS1tZUxpZlhMU2J3ekdiWFJSd0UwdVFtNmthOXV6MUlaV0FTR1JxUlhlWjloUDRwbEx2ZXVIajIwY3RUYjJfT3BMZ0ZtVldhcERQLWR3SWl3QmVIUWh0M1NQOEtIZVdTWmJkcw&q=https%3A%2F%2Fnlp.stanford.edu%2Fprojects%2Fglove%2F&v=HKcvvooqYpM)  jij hebt glove.6B.zip nodig [Klik hier om meteen te downloaden](https://nlp.stanford.edu/data/glove.6B.zip)
+
+
 ## 🧾 Beschrijving van het Model
 
 Dit LSTM-netwerk is ontworpen voor de classificatie van sms-berichten in twee categorieën: **ham** (normale berichten) en **spam** (ongewenste berichten). Het model maakt gebruik van een vooraf getrainde woordembedding om tekstuele informatie te representeren als vectoren, en verwerkt deze sequentiële gegevens met een LSTM-laag om contextuele relaties in de tekst vast te leggen.
